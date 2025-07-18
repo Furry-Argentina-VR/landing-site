@@ -31,5 +31,10 @@ export default defineNuxtConfig({
     defaults: {
       weights: [400, 700, 900]
     }
+  },
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
   }
 })
