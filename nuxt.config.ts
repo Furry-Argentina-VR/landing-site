@@ -1,0 +1,35 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2025-05-15',
+  devtools: { enabled: true },
+  modules: [
+    '@nuxt/content',
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/ui'
+  ],
+  future: {
+    compatibilityVersion: 4
+  },
+  css: ['~/assets/css/main.css'],
+  app: {
+    head: {
+      titleTemplate: '%s | Furry Argentina VR',
+      title: '-',
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg'
+        }
+      ]
+    }
+  },
+  ui: { colorMode: false },
+  fonts:  {
+    defaults: {
+      weights: [400, 700, 900]
+    }
+  }
+})
