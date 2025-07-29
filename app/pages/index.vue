@@ -38,7 +38,7 @@ const nextMeetupData = computed(() => {
 <template>
   <div id="favr_home">
     <div id="hero_head" class="relative">
-      <NuxtImg id="hero_img" src="/bg/0.png" class="max-h-[50vh] w-full object-cover" />
+      <NuxtImg v-if="home" id="hero_img" :src="(home.meta.heroPhotoUrl as string)" class="max-h-[50vh] w-full object-cover" />
       <img src="/favicon.svg" alt="Logo de FAVR" class="absolute bottom-0 left-[50%] transform translate-x-[-50%] translate-y-[50%] w-32">
       <div class="absolute inset-x-0 bottom-0 py-4">
         <UContainer v-if="home" class="flex items-center justify-end">
