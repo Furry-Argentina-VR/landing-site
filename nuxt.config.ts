@@ -34,8 +34,20 @@ export default defineNuxtConfig({
     }
   },
   content: {
-    experimental: {
-      sqliteConnector: 'native'
+    database: {
+      type: 'libsql',
+      url: process.env.NUXT_REMOTE_DB_ORIGIN,
+      authToken: process.env.NUXT_REMOTE_DB_TOKEN
+    }
+  },
+  runtimeConfig: {
+    remote: {
+      landing: {
+        csm: {
+          origin: '',
+          token: ''
+        }
+      }
     }
   }
 })

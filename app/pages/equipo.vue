@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const { data: staffList } = await useAsyncData(
+const { data: staffList } = await useLazyAsyncData(
   () => queryCollection('staff')
-    .select('twitter_handler', 'name', 'role', 'picture').order('name', 'ASC').all()
+    .select('twitter_handler', 'name', 'role', 'avatar_url').order('name', 'ASC').all()
 );
 
 useSeoMeta({
@@ -19,8 +19,8 @@ useSeoMeta({
       <div>
         <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
           <li v-for="member in staffList" :key="member.name" class="flex gap-6 rounded-xl shadow-lg border border-neutral-200 p-4 lg:p-6">
-            <div v-if="member.picture">
-              <NuxtImg :src="`/staff_pictures/${member.picture}`" class="size-16 lg:size-32 rounded-full" />
+            <div v-if="member.avatar_url">
+              <NuxtImg :src="member.avatar_url" class="size-16 lg:size-32 rounded-full" />
             </div>
             <div class="space-y-4">
               <div>
