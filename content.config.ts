@@ -19,7 +19,7 @@ export default defineContentConfig({
       source: {
         repository: process.env.NUXT_REMOTE_LANDING_CSM_ORIGIN,
         authToken: process.env.NUXT_REMOTE_LANDING_CSM_TOKEN,
-        include: '**/*.md'
+        include: 'content/*.md'
       }
     }),
     staff: defineCollection({
@@ -28,7 +28,7 @@ export default defineContentConfig({
       source: {
         repository: process.env.NUXT_REMOTE_LANDING_CSM_ORIGIN,
         authToken: process.env.NUXT_REMOTE_LANDING_CSM_TOKEN,
-        include: 'staff/*.md'
+        include: 'content/staff/*.md'
       }
     })
   }

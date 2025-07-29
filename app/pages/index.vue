@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const { data: home } = await useAsyncData(() => queryCollection('content').path('/home').first());
-const { data: nextMeetup } = await useAsyncData(() => queryCollection('content').path('/upcoming-meetup').first());
+const { data: home } = await useAsyncData(() => queryCollection('content').path('/content/home').first());
+const { data: nextMeetup } = await useAsyncData(() => queryCollection('content').path('/content/upcoming-meetup').first());
 
 useSeoMeta({
   title: home.value?.title,
