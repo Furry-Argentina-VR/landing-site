@@ -28,6 +28,9 @@ export default defineNuxtConfig({
     }
   },
   ui: { colorMode: false },
+  image: {
+    domains: ['cdn.furryvr.ar']
+  },
   fonts:  {
     defaults: {
       weights: [400, 700, 900]
