@@ -31,7 +31,7 @@ const nextMeetupData = computed(() => {
   return {
     title: nextMeetup.value.data.title,
     formattedTime: new Intl.DateTimeFormat('es-AR', { timeStyle: 'short', dateStyle: 'long' }).format(meetupDate),
-    status: Object.entries(status).find(([_, v]) => v)?.[0] ?? ''
+    status: nextMeetupFormattedStatuses[Object.entries(status).find(([_, v]) => v)?.[0] ?? ''] as string
   }
 })
 </script>
@@ -60,13 +60,7 @@ const nextMeetupData = computed(() => {
               <p>¡No hace falta que tengas un visor VR para participar!</p>
             </div>
           </div>
-          <div v-if="nextMeetupData" id="hero_nextmeetup_card">
-            <h2 v-text="nextMeetupData.title" />
-            <h3>{{ nextMeetupData.formattedTime }}</h3>
-            <div class="status_tag_container">
-              <span class="status_tag" v-text="nextMeetupFormattedStatuses[nextMeetupData.status]" />
-            </div>
-          </div>
+          <MeetupCard v-if="nextMeetupData" :meetup="nextMeetupData"/>
         </div>
         <div class="flex flex-col lg:flex-row items-start lg:justify-start gap-4">
           <ULink class="w-full lg:w-auto" :to="vrcGroupLink" external target="_blank">
@@ -87,12 +81,5 @@ const nextMeetupData = computed(() => {
 
 #hero_home_contents {
   @apply space-y-4;
-}
-
-#hero_nextmeetup_card {
-  @apply rounded-xl px-8 py-6 border border-neutral-200 shadow-xl;
-  h2 { @apply text-3xl font-black; }
-  .status_tag_container { @apply pt-4; }
-  .status_tag { @apply bg-primary-500 text-white py-2 px-4 font-bold rounded-full; }
 }
 </style>
