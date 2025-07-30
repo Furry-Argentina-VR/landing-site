@@ -21,7 +21,7 @@ const nextMeetupData = computed(() => {
   const date = {
     now: new Date().getTime(),
     point: meetupDate.getTime(),
-    later: meetupDate.getTime() + 4 * 60 * 60 * 1000
+    later: meetupDate.getTime() + 3 * 60 * 60 * 1000
   }
   const status:Record<string, boolean> = {
     upcoming: date.now < date.point,
