@@ -1,5 +1,6 @@
 <template>
   <main id="favr_root">
+    <NuxtLoadingIndicator color="#fbb20f" />
     <Nav />
     <div class="favr_contents">
       <slot />
