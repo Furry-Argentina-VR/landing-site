@@ -1,10 +1,11 @@
 <script setup lang="ts">
-const { data: home } = await useAsyncData(() => queryCollection('content').path('/content/home').first());
-const { data: nextMeetup } = await useAsyncData(() => queryCollection('content').path('/content/upcoming-meetup').first());
+// Fetch
+const { data: home } = await useAsyncData(() => useContent('home.md'))
+const { data: nextMeetup } = await useAsyncData(() => useContent('upcoming-meetup.md'));
 
 useSeoMeta({
-  title: home.value?.title,
-  description: home.value?.description
+  title: home.value?.data.title,
+  description: home.value?.data.description
 });
 
 const vrcGroupLink = 'https://vrc.group/FURARG.7248';
@@ -16,7 +17,7 @@ const nextMeetupFormattedStatuses:Record<string, string> = {
 }
 const nextMeetupData = computed(() => {
   if (!nextMeetup.value) return null;
-  const meetupDate = new Date(nextMeetup.value.meta.epoch as number);
+  const meetupDate = new Date(nextMeetup.value.data.epoch as number);
   const date = {
     now: new Date().getTime(),
     point: meetupDate.getTime(),
@@ -28,7 +29,7 @@ const nextMeetupData = computed(() => {
     finished: date.now > date.later 
   }
   return {
-    title: nextMeetup.value.title,
+    title: nextMeetup.value.data.title,
     formattedTime: new Intl.DateTimeFormat('es-AR', { timeStyle: 'short', dateStyle: 'long' }).format(meetupDate),
     status: Object.entries(status).find(([_, v]) => v)?.[0] ?? ''
   }
@@ -38,13 +39,13 @@ const nextMeetupData = computed(() => {
 <template>
   <div id="favr_home">
     <div id="hero_head" class="relative">
-      <NuxtImg v-if="home" id="hero_img" :src="(home.meta.heroPhotoUrl as string)" class="max-h-[50vh] w-full object-cover" />
+      <NuxtImg v-if="home" id="hero_img" :src="(home.data.heroPhotoUrl as string)" class="max-h-[50vh] w-full object-cover" />
       <img src="/favicon.svg" alt="Logo de FAVR" class="absolute bottom-0 left-[50%] transform translate-x-[-50%] translate-y-[50%] w-32">
       <div class="absolute inset-x-0 bottom-0 py-4">
         <UContainer v-if="home" class="flex items-center justify-end">
-          <ULink :to="(home.meta.heroPhotographerLink as string)" class="inline-flex gap-2 items-center text-white hover:text-white underline">
+          <ULink :to="(home.data.heroPhotographerLink as string)" class="inline-flex gap-2 items-center text-white hover:text-white underline">
             <UIcon name="i-lucide-aperture" />
-            <span v-text="(home.meta.heroPhotographerName as string)" />
+            <span v-text="(home.data.heroPhotographerName as string)" />
           </ULink>
         </UContainer>
       </div>

@@ -1,14 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxtjs/mdc'
   ],
   future: {
     compatibilityVersion: 4
@@ -51,9 +52,19 @@ export default defineNuxtConfig({
       landing: {
         csm: {
           origin: '',
-          token: ''
+          token: '',
         }
       }
+    },
+    cms: {
+      org: '',
+      repo: '',
+      token: ''
     }
+  },
+  vite: {
+    optimizeDeps: {
+      include: ["debug"],
+    },
   }
 })
