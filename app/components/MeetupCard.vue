@@ -27,6 +27,6 @@ defineProps<{
   @apply rounded-xl px-8 py-6 border border-neutral-200 shadow-xl;
   h2 { @apply text-3xl font-black; }
   .status_tag_container { @apply pt-4; }
-  .status_tag { @apply bg-primary-500 text-white py-2 px-4 font-bold rounded-full; }
+  .status_tag { @apply bg-primary text-white py-2 px-4 font-bold rounded-full; }
 }
 </style>

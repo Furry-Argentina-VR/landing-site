@@ -6,7 +6,7 @@ export default defineAppConfig({
     },
     button: {
       slots: {
-        base: 'font-bold'
+        base: 'font-bold rounded-full sm:py-3 sm:px-6',
       }
     },
     container: {

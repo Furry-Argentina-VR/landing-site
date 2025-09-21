@@ -1,7 +1,6 @@
 <script setup lang="ts">
-const { data: staffList } = await useLazyAsyncData(
-  () => queryCollection('staff')
-    .select('twitter_handler', 'name', 'role', 'avatar_url').order('name', 'ASC').all()
+const { data: staffList } = await useLazyAsyncData<StaffItem[]>(
+  () => useContent('collections/staff.json')
 );
 
 useSeoMeta({
@@ -28,8 +27,8 @@ useSeoMeta({
                 <span v-text="member.role" />
               </div>
               <ul>
-                <li v-if="member.twitter_handler">
-                  <ULink :to="`https://x.com/${member.twitter_handler}`" target="_blank" class="text-primary-500">
+                <li v-if="member.social_handles.twitter">
+                  <ULink :to="`https://x.com/${member.social_handles.twitter}`" target="_blank" class="text-primary-500">
                     <UIcon name="i-lucide-twitter" size="32" />
                   </ULink>
                 </li>

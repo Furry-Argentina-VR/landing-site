@@ -11,6 +11,10 @@ const navLinks = [
     to: '/equipo'
   },
   {
+    label: 'Galería',
+    to: '/galeria'
+  },
+  {
     label: 'Guías y ayuda',
     to: 'https://xaeky.cloud/vrchelp',
     external: true
