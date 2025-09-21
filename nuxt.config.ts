@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: false },
   modules: [
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
@@ -37,25 +36,7 @@ export default defineNuxtConfig({
       weights: [400, 700, 900]
     }
   },
-  content: {
-    database: {
-      type: 'libsql',
-      url: process.env.NUXT_REMOTE_DB_ORIGIN as string,
-      authToken: process.env.NUXT_REMOTE_DB_TOKEN as string
-    },
-    experimental: {
-      sqliteConnector: 'native'
-    }
-  },
   runtimeConfig: {
-    remote: {
-      landing: {
-        csm: {
-          origin: '',
-          token: '',
-        }
-      }
-    },
     cms: {
       org: '',
       repo: '',

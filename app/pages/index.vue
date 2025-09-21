@@ -55,7 +55,7 @@ const nextMeetupData = computed(() => {
         <h2 class="text-3xl text-center lg:text-left font-black">Furry Argentina VR</h2>
         <div class="grid lg:grid-cols-2 gap-12">
           <div id="hero_home_contents">
-            <ContentRenderer v-if="home" :value="home" />
+            <MDC v-if="home" :value="home" />
             <div class="font-bold text-center lg:text-left">
               <p>¡No hace falta que tengas un visor VR para participar!</p>
             </div>
