@@ -26,15 +26,20 @@ useSeoMeta({
                 <h2 class="text-2xl font-bold" v-text="member.name" />
                 <span v-text="member.role" />
               </div>
-              <ul>
+              <ul class="flex gap-4">
                 <li v-if="member.social_handles.twitter">
                   <ULink :to="`https://x.com/${member.social_handles.twitter}`" target="_blank" class="text-primary-500">
-                    <UIcon name="i-lucide-twitter" size="32" />
+                    <UIcon name="i-lucide-twitter" size="24" />
                   </ULink>
                 </li>
                 <li v-if="member.social_handles.twitch">
                   <ULink :to="`https://twitch.tv/${member.social_handles.twitch}`" target="_blank" class="text-primary-500">
-                    <UIcon name="i-lucide-twitch" size="32" />
+                    <UIcon name="i-lucide-twitch" size="24" />
+                  </ULink>
+                </li>
+                <li v-for="site in member.external_sites" :key="site">
+                  <ULink :to="site" target="_blank" class="text-primary-500">
+                    <UIcon name="i-lucide-link" size="24" />
                   </ULink>
                 </li>
               </ul>
