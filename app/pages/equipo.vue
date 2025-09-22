@@ -32,6 +32,11 @@ useSeoMeta({
                     <UIcon name="i-lucide-twitter" size="32" />
                   </ULink>
                 </li>
+                <li v-if="member.social_handles.twitch">
+                  <ULink :to="`https://twitch.tv/${member.social_handles.twitch}`" target="_blank" class="text-primary-500">
+                    <UIcon name="i-lucide-twitch" size="32" />
+                    </ULink>
+                  </li>
               </ul>
             </div>
           </li>
