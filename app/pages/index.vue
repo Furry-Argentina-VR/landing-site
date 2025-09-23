@@ -75,7 +75,7 @@ const nextMeetupData = computed(() => {
   </div>
 </template>
 
-<style>
+<style scoped>
 @reference '~/assets/css/main.css';
 
 #hero_head {

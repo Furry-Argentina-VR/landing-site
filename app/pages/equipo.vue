@@ -56,7 +56,7 @@ useSeoMeta({
   </div>
 </template>
 
-<style>
+<style scoped>
 @reference '~/assets/css/main.css';
 
 .favr_team_member_card {
