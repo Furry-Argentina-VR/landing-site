@@ -27,7 +27,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  ui: { colorMode: false },
   image: {
     domains: ['cdn.furryvr.ar']
   },

@@ -24,7 +24,7 @@ defineProps<{
 @reference '~/assets/css/main.css';
 
 .hero_nextmeetup_card {
-  @apply rounded-xl px-8 py-6 border border-neutral-200 shadow-xl;
+  @apply rounded-xl px-8 py-6 border border-neutral-200 shadow-xl bg-white dark:bg-neutral-800 dark:border-neutral-700;
   h2 { @apply text-3xl font-black; }
   .status_tag_container { @apply pt-4; }
   .status_tag { @apply bg-primary text-white py-2 px-4 font-bold rounded-full; }

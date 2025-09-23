@@ -64,10 +64,10 @@ const nextMeetupData = computed(() => {
         </div>
         <div class="flex flex-col lg:flex-row items-start lg:justify-start gap-4">
           <ULink class="w-full lg:w-auto" :to="vrcGroupLink" external target="_blank">
-            <UButton label="¡Quiero unirme al grupo!" size="xl" class="w-full justify-center lg:w-auto" icon="i-lucide-external-link" trailing />
+            <UButton label="¡Quiero unirme al grupo!" size="xl" class="w-full justify-center lg:w-auto rounded-full py-3 px-6" icon="i-lucide-external-link" trailing />
           </ULink>
           <ULink class="w-full lg:w-auto" to="/galeria">
-            <UButton color="neutral" variant="soft" label="Galeria" size="xl" class="w-full justify-center lg:w-auto" icon="i-lucide-camera" />
+            <UButton color="neutral" variant="outline" label="Galeria" size="xl" class="w-full justify-center lg:w-auto rounded-full py-3 px-6" icon="i-lucide-camera" />
           </ULink>
         </div>
       </UContainer>

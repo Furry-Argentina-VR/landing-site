@@ -2,11 +2,11 @@ export default defineAppConfig({
   ui: {
     colors: {
       primary: 'sky',
-      neutral: 'zinc'
+      neutral: 'gray'
     },
     button: {
       slots: {
-        base: 'font-bold rounded-full sm:py-3 sm:px-6',
+        base: 'font-bold',
       }
     },
     container: {

@@ -76,16 +76,16 @@ nav {
     .nav_end { @apply text-white; }
   }
   &.home.scrolled {
-    .nav_end { @apply text-black; }
+    .nav_end { @apply text-black dark:text-white; }
   }
   &.scrolled {
-    @apply bg-white;
+    @apply bg-white/50 dark:bg-neutral-900/50 shadow-xl backdrop-blur-2xl;
   }
 }
 
 .nav_slideover_body {
   @apply space-y-4;
-  li > a { @apply flex items-center gap-2 text-black; }
-  li > a span { @apply text-black underline text-2xl font-bold; }
+  li > a { @apply flex items-center gap-2; }
+  li > a span { @apply text-black dark:text-white underline text-2xl font-bold; }
 }
 </style>
