@@ -60,7 +60,9 @@ const nextMeetupData = computed(() => {
               <p>¡No hace falta que tengas un visor VR para participar!</p>
             </div>
           </div>
-          <MeetupCard v-if="nextMeetupData" :meetup="nextMeetupData"/>
+          <div id="hero_home_cards">
+            <MeetupCard v-if="nextMeetupData" :meetup="nextMeetupData"/>
+          </div>
         </div>
         <div class="flex flex-col lg:flex-row items-start lg:justify-start gap-4">
           <ULink class="w-full lg:w-auto" :to="vrcGroupLink" external target="_blank">
